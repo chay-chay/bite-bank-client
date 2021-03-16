@@ -11,7 +11,7 @@ export const addRecipe = (recipe) => ({ type: "ADDED_RECIPE", payload: recipe })
 // mapDiapatchToProps 
 //this.prop.fetchingRecipes in componentdidmount
 // the reason we use Thunk is get these fetch out of the containers/components
-export const fetchingRecipes = () => {
+export const fetchRecipes = () => {
     console.log("B")
     return (dispatch) => {
         dispatch({type: "LOADING"})
