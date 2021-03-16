@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router";
 import Recipes from '../components/recipes/Recipes'
 import CreateRecipe from '../components/createRecipe/CreateRecipe'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import { fetchingRecipes } from '../actions/recipesActions'
 class RecipesContainer extends Component {
     state =  {
         search: "",
@@ -11,7 +12,7 @@ class RecipesContainer extends Component {
     componentDidMount(){
           // where you make your fetch requests 
         console.log("A")
-        this.prop.fetchingRecipes() //async stuff happening here
+        this.props.fetchingRecipes() //async stuff happening here
         console.log("D")
     }
     // component
@@ -29,11 +30,18 @@ class RecipesContainer extends Component {
 }
 // get info out of the store
 const mapStateToProps = (state) => {
-    debugger
+    
     return {
-        recipes: state.recipes
+        fetchingRecipes: state.recipes,
+        loadings: state.loading
         
     }
 }
+// this dispatch cause a reducer to run
+const mapDispatchToProps = (dispatch) =>{
+    return {
+        fetchingRecipes: (recipes) => dispatch(fetchingRecipes(recipes))
+    }
+}
 
-export default connect(mapStateToProps)(RecipesContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(RecipesContainer)

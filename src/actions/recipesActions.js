@@ -3,13 +3,14 @@
 
 const url = "http://localhost:3000/recipes"
 
-
+// we have to pass an argument  
 export const loadRecipes = (recipes) => {return {type: "LOAD_RECIPES", payload: recipes};}
 export const addRecipe = (recipe) => ({ type: "ADDED_RECIPE", payload: recipe });
 
 // asyn action works with thunk res for fetching recipes
 // mapDiapatchToProps 
 //this.prop.fetchingRecipes in componentdidmount
+// the reason we use Thunk is get these fetch out of the containers/components
 export const fetchingRecipes = () => {
     console.log("B")
     return (dispatch) => {

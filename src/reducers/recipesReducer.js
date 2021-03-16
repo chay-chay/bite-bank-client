@@ -7,6 +7,7 @@ const recipesReducer = (state = {recipes: [], loading: false}, action) => {
         return {...state, loading: true};
 
         case "LOAD_RECIPES":
+            console.log(action)
             console.log("E")
         return {...state, loading: false, recipes: action.payload};
 

@@ -1,24 +1,25 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
+import "./Navbar.css"
 class Navbar extends Component {
   render() {
     return (
       <div>
           
-  <NavLink to="/" exact>
+  <NavLink to="/" className="main-nav" exact>
           Home
         </NavLink>
 
-        <NavLink to="/recipes" exact>
+        <NavLink to="/recipes" className="main-nav" exact>
         Recipes
       </NavLink>
 
-      <NavLink to="/recipes/new" exact>
+      <NavLink to="/recipes/new" className="main-nav" exact>
         Create Meal
       </NavLink>
 
-      <NavLink to="/about" exact>
+      <NavLink to="/about" className="main-nav" exact>
       About
       </NavLink> 
 

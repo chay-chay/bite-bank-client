@@ -10,3 +10,13 @@
     align-items: center;
     justify-items: center;
 }
+
+.main-nav:active {
+    color: pink;
+}
+
+
+
+.main-nav:hover {
+    color: blueviolet important!;
+}
