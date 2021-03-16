@@ -1,0 +1,48 @@
+
+// regular action res for asyn action 
+
+const url = "http://localhost:3000/recipes"
+
+
+export const loadRecipes = (recipes) => {return {type: "LOAD_RECIPES", payload: recipes};}
+export const addRecipe = (recipe) => ({ type: "ADDED_RECIPE", payload: recipe });
+
+// asyn action works with thunk res for fetching recipes
+// mapDiapatchToProps 
+//this.prop.fetchingRecipes in componentdidmount
+export const fetchingRecipes = () => {
+    console.log("B")
+    return (dispatch) => {
+        dispatch({type: "LOADING"})
+        fetch(url)
+        .then(res => res.json())
+        .then(data => {
+              // instead of setState, we need to dispatch an action
+            dispatch(loadRecipes(data)) // dispatching an action to the reducer
+            // pass the data as an argument
+            console.log("F")
+        })
+        console.log("C")
+         // responsible for dispatching the loadRecipes action
+    }
+}
+
+export const createRecipes = (recipe) => {
+    // send a fetch request 
+    return (dispatch) => {
+        const configObj = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "Accepts": "application/json"
+            },
+            body: JSON.stringify(recipe)
+        }
+        fetch(url, configObj)
+        .then(res => res.json())
+        .then(data => {
+            dispatch(addRecipe(data))
+           
+        })
+    }  
+}

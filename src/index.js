@@ -6,10 +6,11 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import recipesReducer from './reducers/recipesReducer'
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 const store = createStore(
-  recipesReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  recipesReducer,composeWithDevTools()
+    
 );
 
 ReactDOM.render(
