@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./createRecipe.css";
-
+import { connect } from "react-redux";
+import { createRecipes } from "../../actions/recipesActions"
 class RecipeForm extends Component {
   state = {
     name: "",
@@ -14,23 +15,23 @@ class RecipeForm extends Component {
     let value = event.target.value;
     this.setState({
       [event.target.name]: value,
+      // find the key in state by name
     });
     // console.log(event.target.value)
   }
-  //     this.setState({
-  //         name: event.target.value,
-  //         category: event.target.value,
-  //         area: event.target.value,
-  //         image_url: event.target.value,
-  //         youtube_url: event.target.value,
-  //       })
-  //       console.log(event.target.value)
-  //   }
+  
+  handleSubmit (event) {
+      event.preventDefault();
+      console.log(this.state)
+    //  debugger
+     // set up our recipe object 
+     this.props.createRecipes(this.state)
+  }
 
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={(event) => this.handleSubmit(event)}>
           <label className="foodLabel">Food Name</label>
           <input
             type="text"
@@ -78,4 +79,11 @@ class RecipeForm extends Component {
   }
 }
 
-export default RecipeForm;
+const mapDispatchToProps = (dispatch) => {
+  console.log(dispatch)
+  return {
+    createRecipes: (recipe) => dispatch(createRecipes(recipe))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(RecipeForm);

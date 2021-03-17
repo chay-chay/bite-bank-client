@@ -12,7 +12,7 @@ export const addRecipe = (recipe) => ({ type: "ADDED_RECIPE", payload: recipe })
 //this.prop.fetchingRecipes in componentdidmount
 // the reason we use Thunk is get these fetch out of the containers/components
 export const fetchRecipes = () => {
-    console.log("B")
+    // console.log("B")
     return (dispatch) => {
         dispatch({type: "LOADING"})
         fetch(url)
@@ -21,9 +21,9 @@ export const fetchRecipes = () => {
               // instead of setState, we need to dispatch an action
             dispatch(loadRecipes(data)) // dispatching an action to the reducer
             // pass the data as an argument
-            console.log("F")
+            // console.log("F")
         })
-        console.log("C")
+        // console.log("C")
          // responsible for dispatching the loadRecipes action
     }
 }
@@ -31,6 +31,7 @@ export const fetchRecipes = () => {
 export const createRecipes = (recipe) => {
     // send a fetch request 
     return (dispatch) => {
+        console.log(dispatch)
         const configObj = {
             method: 'POST',
             headers: {
@@ -45,5 +46,6 @@ export const createRecipes = (recipe) => {
             dispatch(addRecipe(data))
            
         })
+        .catch(error => console.log(error));
     }  
 }

@@ -9,9 +9,8 @@
     grid-template-columns: repeat(4, auto);
     align-items: center;
     justify-items: center;
-    width: '100px';
     height: 100px;
-    padding: '100px';
+    padding: '80px';
     margin: '20px';
    
 }
