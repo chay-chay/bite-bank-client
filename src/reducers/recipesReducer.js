@@ -13,10 +13,13 @@ const recipesReducer = (state = {recipes: [], loading: false}, action) => {
         case "ADDED_RECIPE":
             return { ...state, recipes: [...state.recipes, action.payload] }    
             
-        case "DELETE_MEAL":
-            const filteredRecipe = state.recipes.filter(recipe => recipe.id !== action.payload)
+        case "DELETE_RECIPE":
+            const filteredRecipe = state.recipes.filter(recipe => recipe.id !== action.payload.id)
             return { ...state, recipe: filteredRecipe }
     
+        // case "UPDATE_MEAL":             
+                
+                
         default:
             return state;
     }

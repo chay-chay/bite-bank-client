@@ -23,8 +23,11 @@ class RecipesContainer extends Component {
         <Switch>
           <Route exact path="/recipes">
             <Recipes recipes={this.props.recipes} />
+           
           </Route>
           <Route exact path="/recipes/new" component={CreateRecipe} />
+          {/* <Route exact path="recipes/:id/edit" component={EditRecipe} />  */}
+          {/* // find recipe match id  and pas found recipe to the form as a props */}
         </Switch>
         {/* {this.props.loading ? <h1>LOADING....</h1> : this.getRecipes()} */}
       </div>

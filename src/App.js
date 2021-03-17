@@ -7,6 +7,7 @@ import Home from './components/home/Home'
 // import CreateRecipe from './components/createRecipe/CreateRecipe'
 import About from './components/about/About'
 import Footer from './components/footer/Footer'
+
 class App extends Component {
   render() {
     return (

@@ -6,8 +6,8 @@ const url = "http://localhost:3000/recipes"
 // we have to pass an argument  
 export const loadRecipes = (recipes) => {return {type: "LOAD_RECIPES", payload: recipes};}
 export const addRecipe = (recipe) => ({ type: "ADDED_RECIPE", payload: recipe });
-const deleteRecipe = (recipeId) => {return { type: "DELETE_MEAL", payload: recipeId}}
-
+const deleteRecipe = (recipeId) => {return { type: "DELETE_RECIPE", payload: recipeId}}
+// const updatingRecipe = (updatedRecipe) => {return{type: "UPDATE_MEAL", payload:updatedRecipe}}
 
 
 // asyn action works with thunk res for fetching recipes
@@ -55,7 +55,7 @@ export const createRecipes = (recipe) => {
 
 export const removeRecipe = (recipeId) => {
     return (dispatch) => {
-        fetch(url + recipeId, {
+        fetch(url + "/" + recipeId, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json"
@@ -71,3 +71,23 @@ export const removeRecipe = (recipeId) => {
           .catch(error => console.log(error));
     };
   };
+
+  // UPDATE
+  // export const updateRecipe = (recipeId, tempRecipe) => {
+  //   return (dispatch) => {
+  //     console.log('c')
+  //       fetch(url + `${recipeId}`, {
+  //           method: "PATCH",
+  //           headers: {
+  //               'Accept': 'application/json',
+  //               'Content-Type': 'application/json'
+  //           },
+  //           body: JSON.stringify(tempRecipe)
+  //       })
+  //           .then( resp => resp.json() )
+  //           .then( data => {
+  //               dispatch(updatingRecipe(data));
+  //           })
+  //   }
+  
+  // }
