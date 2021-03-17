@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./createRecipe.css";
+
 class RecipeForm extends Component {
   state = {
     name: "",
@@ -9,20 +10,67 @@ class RecipeForm extends Component {
     youtube_url: "",
   };
 
+  handleOnChange(event) {
+    let value = event.target.value;
+    this.setState({
+      [event.target.name]: value,
+    });
+    // console.log(event.target.value)
+  }
+  //     this.setState({
+  //         name: event.target.value,
+  //         category: event.target.value,
+  //         area: event.target.value,
+  //         image_url: event.target.value,
+  //         youtube_url: event.target.value,
+  //       })
+  //       console.log(event.target.value)
+  //   }
+
   render() {
     return (
       <div>
         <form>
           <label className="foodLabel">Food Name</label>
-          <input type="text" placeholder="Add food name here" />
+          <input
+            type="text"
+            name="name"
+            placeholder="Add food name here"
+            value={this.state.name}
+            onChange={(event) => this.handleOnChange(event)}
+          />
           <label className="foodLabel">Category</label>
-          <input type="text" placeholder="Add a category of food here... ex.Chicken, Breakfast, and Seafood" />
+          <input
+            type="text"
+            name="category"
+            placeholder="Add a category of food here... ex.Chicken, Breakfast, and Seafood"
+            value={this.state.category}
+            onChange={(event) => this.handleOnChange(event)}
+          />
           <label className="foodLabel">Ethnic</label>
-          <input type="text" placeholder="Add a ethnic of food here... ex.Thai, American, and French" />
+          <input
+            type="text"
+            name="area"
+            placeholder="Add an ethnic of food here... ex.Thai, American, and French"
+            value={this.state.area}
+            onChange={(event) => this.handleOnChange(event)}
+          />
           <label className="foodLabel">Image Link</label>
-          <input type="text" placeholder="Add an image url here" />
+          <input
+            type="text"
+            name="image_url"
+            placeholder="Add an image url here"
+            value={this.state.image_url}
+            onChange={(event) => this.handleOnChange(event)}
+          />
           <label className="foodLabel">Youtube Link</label>
-          <input type="text" placeholder="Add a youtube url here" />
+          <input
+            type="text"
+            name="youtube_url"
+            placeholder="Add a youtube url here"
+            value={this.state.youtube_url}
+            onChange={(event) => this.handleOnChange(event)}
+          />
           <input type="submit" className="submitButton" />
         </form>
       </div>
