@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-
+import RecipeForm from './RecipeForm'
 class CreateRecipe extends Component {
     render() {
         return (
-            <div>CreateRecipe!</div>
+            <div><RecipeForm /></div>
         )
     }
 }
