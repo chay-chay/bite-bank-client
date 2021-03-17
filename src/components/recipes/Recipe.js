@@ -1,9 +1,17 @@
 import React, { Component } from "react";
 import "./recipe.css";
 import ReactPlayer from "react-player";
+import { connect } from "react-redux";
+import { removeRecipe } from "../../actions/recipesActions"
 // import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 const Recipe = (props) => {
   // console.log(props)
+
+  const handleClick = event =>{
+    // console.log(props)
+    
+  }
+
   return (
     <div className="recipe card">
       <h4> Name : {props.recipe.name}</h4>
@@ -16,12 +24,14 @@ const Recipe = (props) => {
           width="100%"
           height="100%"
         />
+
       </div>
+     <button className="delete-button" onClick={handleClick}>Delete</button>
     </div>
   );
 };
 
-export default Recipe;
+export default connect(null, {removeRecipe})(Recipe);
 
 // "id": 1,
 //   "name": "Teriyaki Chicken Casserole",

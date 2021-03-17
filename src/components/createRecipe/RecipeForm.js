@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./createRecipe.css";
 import { connect } from "react-redux";
 import { createRecipes } from "../../actions/recipesActions"
+import { withRouter } from "react-router-dom";
 class RecipeForm extends Component {
   state = {
     name: "",
@@ -26,6 +27,7 @@ class RecipeForm extends Component {
     //  debugger
      // set up our recipe object 
      this.props.createRecipes(this.state)
+     this.props.history.push("/recipes");
   }
 
   render() {
@@ -86,4 +88,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(RecipeForm);
+export default  withRouter(connect(null, mapDispatchToProps)(RecipeForm));

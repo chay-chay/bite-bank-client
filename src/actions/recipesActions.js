@@ -6,6 +6,9 @@ const url = "http://localhost:3000/recipes"
 // we have to pass an argument  
 export const loadRecipes = (recipes) => {return {type: "LOAD_RECIPES", payload: recipes};}
 export const addRecipe = (recipe) => ({ type: "ADDED_RECIPE", payload: recipe });
+const deleteRecipe = (recipeId) => {return { type: "DELETE_MEAL", payload: recipeId}}
+
+
 
 // asyn action works with thunk res for fetching recipes
 // mapDiapatchToProps 
@@ -16,7 +19,7 @@ export const fetchRecipes = () => {
     return (dispatch) => {
         dispatch({type: "LOADING"})
         fetch(url)
-        .then(res => res.json())
+        .then(resp => resp.json())
         .then(data => {
               // instead of setState, we need to dispatch an action
             dispatch(loadRecipes(data)) // dispatching an action to the reducer
@@ -41,7 +44,7 @@ export const createRecipes = (recipe) => {
             body: JSON.stringify(recipe)
         }
         fetch(url, configObj)
-        .then(res => res.json())
+        .then(resp => resp.json())
         .then(data => {
             dispatch(addRecipe(data))
            
@@ -49,3 +52,22 @@ export const createRecipes = (recipe) => {
         .catch(error => console.log(error));
     }  
 }
+
+export const removeRecipe = (recipeId) => {
+    return (dispatch) => {
+        fetch(url + recipeId, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        .then((response) => {
+            if (response.ok) {
+              dispatch(deleteRecipe(recipeId));
+            } else {
+              window.alert('Unable to delete');
+            }
+          })
+          .catch(error => console.log(error));
+    };
+  };
