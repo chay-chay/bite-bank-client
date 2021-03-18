@@ -6,9 +6,9 @@ const url = "http://localhost:3000/recipes"
 // we have to pass an argument  
 export const loadRecipes = (recipes) => {return {type: "LOAD_RECIPES", payload: recipes};}
 export const addRecipe = (recipe) => ({ type: "ADDED_RECIPE", payload: recipe });
-const deleteRecipe = (recipeId) => {return { type: "DELETE_RECIPE", payload: recipeId}}
-// const updatingRecipe = (updatedRecipe) => {return{type: "UPDATE_MEAL", payload:updatedRecipe}}
-
+export const deleteRecipe = (recipeId) => {return { type: "DELETE_RECIPE", payload: recipeId}}
+export const updatingRecipe = (updatedRecipe) => {return{type: "UPDATE_MEAL", payload:updatedRecipe}}
+export const loadUpdate = (loadedRecipe) => {return{type:"LOAD_UPDATE", payload: loadedRecipe}}
 // thunk gives us the ability to return FUNCTIONS with a default argument of dispatch 
 // asyn action works with thunk res for fetching recipes
 // the reason we use Thunk is get these fetch out of the containers/components
@@ -70,22 +70,23 @@ export const removeRecipe = (recipeId) => {
     };
   };
 
+
   // UPDATE
-  // export const updateRecipe = (recipeId, tempRecipe) => {
-  //   return (dispatch) => {
-  //     console.log('c')
-  //       fetch(url + `${recipeId}`, {
-  //           method: "PATCH",
-  //           headers: {
-  //               'Accept': 'application/json',
-  //               'Content-Type': 'application/json'
-  //           },
-  //           body: JSON.stringify(tempRecipe)
-  //       })
-  //           .then( resp => resp.json() )
-  //           .then( data => {
-  //               dispatch(updatingRecipe(data));
-  //           })
-  //   }
+  export const updateRecipe = (recipeId, tempRecipe) => {
+    return (dispatch) => {
+      // console.log('c')
+        fetch(url +  `${recipeId}`, {
+            method: "PATCH",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(tempRecipe)
+        })
+            .then( resp => resp.json() )
+            .then( data => {
+                dispatch(updatingRecipe(data));
+            })
+    }
   
-  // }
+  }

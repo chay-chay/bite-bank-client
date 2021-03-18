@@ -30,7 +30,7 @@ class App extends Component {
         
           <Route exact path="/" component={Home} /> 
           {/* <Route path="/recipes" component={RecipesContainer} /> */}
-          <Route exact path="/recipes">
+          <Route path="/recipes">
             <RecipesContainer searchTerm={this.state.search} />
            
           </Route>

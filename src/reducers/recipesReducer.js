@@ -16,6 +16,10 @@ const recipesReducer = (state = {recipes: [], loading: false}, action) => {
         case "DELETE_RECIPE":
             const filteredRecipe = state.recipes.filter(recipe => recipe.id !== action.payload.id)
             return { ...state, recipe: filteredRecipe }
+
+        case "LOAD_UPDATE":
+            const filterUpdate = state.recipes.map(recipe => recipe.id === action.payload.id )
+            return {...state, recipe: filterUpdate }
     
         // case "UPDATE_MEAL":  
         // return { state.map(crop => (crop.id === action.crop.id) }

@@ -8,13 +8,37 @@ import { removeRecipe } from "../../actions/recipesActions"
 // import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom'
 // import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import { withRouter } from "react-router-dom";
 
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 class Recipe extends Component{
   // console.log(props)
 
   handleClick = event => {
     // console.log(this.props.recipe.id)
-    this.props.removeRecipe(this.props.recipe.id)
+    confirmAlert({
+      title: 'Confirm to submit',
+      message: 'Are you sure to do this.',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => {
+            alert('Your meal has been deleted!')
+            this.props.removeRecipe(this.props.recipe.id)
+            this.props.history.push("/");
+          }
+    
+        },
+        {
+          label: 'No',
+          onClick: () => alert('Change your mind? no problem!')
+        }
+
+      ]
+ 
+    });
+    
   }
 
   render(){
@@ -31,13 +55,13 @@ class Recipe extends Component{
         
         <img src={this.props.recipe.image_url} className="recipe-image" />
         <div style={{ width: "auto", height: "20rem" }}>
-          {/* <ReactPlayer
+          <ReactPlayer
             url={this.props.recipe.youtube_url}
             width="100%"
             height="100%"
             // origin={window.location.host}
           />
-   */}
+  
         </div>
         <Link to ={ `/recipes/${this.props.recipe.id}/edit`}>
           <button>Edit</button>
@@ -51,7 +75,7 @@ class Recipe extends Component{
   
 };
 
-export default connect(null, {removeRecipe})(Recipe);
+export default withRouter(connect(null, {removeRecipe})(Recipe));
 
 // "id": 1,
 //   "name": "Teriyaki Chicken Casserole",
