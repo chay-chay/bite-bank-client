@@ -3,8 +3,12 @@ import "./recipe.css";
 import ReactPlayer from "react-player";
 import { connect } from "react-redux";
 import { removeRecipe } from "../../actions/recipesActions"
-// import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+// import { makeStyles } from '@material-ui/core/styles';
+// import Paper from '@material-ui/core/Paper';
+// import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom'
+// import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+
 class Recipe extends Component{
   // console.log(props)
 
@@ -16,9 +20,15 @@ class Recipe extends Component{
   render(){
     return (
       <div className="recipe card">
-        <h4> Name : {this.props.recipe.name}</h4>
-        <h4>Category: {this.props.recipe.category}</h4>{" "}
-        <h4>Ethnic: {this.props.recipe.area}</h4>{" "}
+        <h2> {this.props.recipe.name}</h2>
+        <div className="category">
+        <h4>Category: {this.props.recipe.category}</h4>
+        </div>
+      
+       <div className="area">
+       <h4>Ethnic: {this.props.recipe.area}</h4>
+       </div>
+        
         <img src={this.props.recipe.image_url} className="recipe-image" />
         <div style={{ width: "auto", height: "20rem" }}>
           <ReactPlayer

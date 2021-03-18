@@ -17,7 +17,9 @@ const recipesReducer = (state = {recipes: [], loading: false}, action) => {
             const filteredRecipe = state.recipes.filter(recipe => recipe.id !== action.payload.id)
             return { ...state, recipe: filteredRecipe }
     
-        // case "UPDATE_MEAL":             
+        // case "UPDATE_MEAL":  
+        // return { state.map(crop => (crop.id === action.crop.id) }
+                
                 
                 
         default:
