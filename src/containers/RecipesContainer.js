@@ -4,7 +4,7 @@ import Recipes from "../components/recipes/Recipes";
 import CreateRecipe from "../components/createRecipe/CreateRecipe";
 import { connect } from "react-redux";
 import { fetchRecipes } from "../actions/recipesActions";
-
+import EditRecipe from "../components/createRecipe/EditRecipe"
 class RecipesContainer extends Component {
   state = {
     search: "",
@@ -26,8 +26,8 @@ class RecipesContainer extends Component {
            
           </Route>
           <Route exact path="/recipes/new" component={CreateRecipe} />
-          {/* <Route exact path="recipes/:id/edit" component={EditRecipe} />  */}
-          {/* // find recipe match id  and pas found recipe to the form as a props */}
+          <Route exact path="recipes/:id/edit" component={EditRecipe} /> 
+          {/* // find recipe match id  and pass found recipe to the form as a props */}
         </Switch>
         {/* {this.props.loading ? <h1>LOADING....</h1> : this.getRecipes()} */}
       </div>
