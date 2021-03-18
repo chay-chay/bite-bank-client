@@ -9,10 +9,8 @@ export const addRecipe = (recipe) => ({ type: "ADDED_RECIPE", payload: recipe })
 const deleteRecipe = (recipeId) => {return { type: "DELETE_RECIPE", payload: recipeId}}
 // const updatingRecipe = (updatedRecipe) => {return{type: "UPDATE_MEAL", payload:updatedRecipe}}
 
-
+// thunk gives us the ability to return FUNCTIONS with a default argument of dispatch 
 // asyn action works with thunk res for fetching recipes
-// mapDiapatchToProps 
-//this.prop.fetchingRecipes in componentdidmount
 // the reason we use Thunk is get these fetch out of the containers/components
 export const fetchRecipes = () => {
     // console.log("B")
