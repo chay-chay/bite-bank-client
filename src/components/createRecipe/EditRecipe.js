@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import RecipeForm from './RecipeForm'
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-
+import { updateRecipe } from "../../actions/recipesActions"
 
 class EditRecipe extends Component {
 
@@ -56,7 +56,7 @@ class EditRecipe extends Component {
         console.log(this.state)
       //  debugger
     //    set up our recipe object 
-       this.props.editRecipes(this.state)
+       this.props.updateRecipe(this.props.route.match.params.id,this.state)
        this.props.history.push("/recipes");
     }
 
@@ -69,7 +69,7 @@ class EditRecipe extends Component {
     }
 }
 
-export default EditRecipe
+export default withRouter(connect(null, {updateRecipe})(EditRecipe))
 
 
 

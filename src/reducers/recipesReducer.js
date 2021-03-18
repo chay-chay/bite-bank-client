@@ -21,8 +21,26 @@ const recipesReducer = (state = {recipes: [], loading: false}, action) => {
         //     const filterUpdate = state.recipes.map(recipe => recipe.id === action.payload.id )
         //     return {...state, recipe: filterUpdate }
     
-        // case "UPDATE_MEAL":  
-        // return { state.map(recipe => (recipe.id === action.recipe.id) }
+        case "UPDATE_MEAL": 
+        // const filterUpdate = state.recipes.filter(recipe => recipe.id === action.payload.id) 
+        const filterUpdate = state.recipes.map(recipe => {
+            if (recipe.id === action.payload.id){
+                return {...recipe, name:action.payload.name,
+                    category:action.payload.category,
+                    area:action.payload.area,
+                    image_url:action.payload.image_url,
+                    youtube_url:action.payload.youtube_url
+                  } 
+                } else {
+                      return recipe
+                  }
+        
+            }
+        )
+
+   
+        console.log(filterUpdate)
+        return { ...state, recipes: filterUpdate }
                 
                 
                 

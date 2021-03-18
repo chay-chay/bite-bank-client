@@ -45,13 +45,19 @@ class Recipe extends Component{
     return (
       <div className="recipe card">
         <h2> {this.props.recipe.name}</h2>
-        <div className="category">
-        <h4>Category: {this.props.recipe.category}</h4>
-        </div>
-      
-       <div className="area">
+       
+          <div>
+          <div className="category">
+          <h4>Category: {this.props.recipe.category}</h4>
+          </div>
+        
+          
        <h4>Ethnic: {this.props.recipe.area}</h4>
        </div>
+         
+        </div>
+      
+      
         
         <img src={this.props.recipe.image_url} className="recipe-image" />
         <div style={{ width: "auto", height: "20rem" }}>

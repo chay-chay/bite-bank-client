@@ -75,7 +75,7 @@ export const removeRecipe = (recipeId) => {
   export const updateRecipe = (recipeId, tempRecipe) => {
     return (dispatch) => {
       // console.log('c')
-        fetch(url +  `${recipeId}`, {
+        fetch(url +  "/" + recipeId, {
             method: "PATCH",
             headers: {
                 'Accept': 'application/json',
@@ -85,8 +85,10 @@ export const removeRecipe = (recipeId) => {
         })
             .then( resp => resp.json() )
             .then( data => {
+              console.log(data)
                 dispatch(updatingRecipe(data));
             })
     }
+    
   
   }
