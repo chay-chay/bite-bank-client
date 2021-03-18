@@ -1,35 +1,10 @@
 import React, { Component } from "react";
 import "./createRecipe.css";
-import { connect } from "react-redux";
-import { createRecipes } from "../../actions/recipesActions"
-import { withRouter } from "react-router-dom";
+// import { connect } from "react-redux";
+// import { createRecipes } from "../../actions/recipesActions"
+// import { withRouter } from "react-router-dom";
 class RecipeForm extends Component {
-  // state = {
-  //   name: "",
-  //   category: "",
-  //   area: "",
-  //   image_url: "",
-  //   youtube_url: "",
-  // };
-
-  // handleOnChange(event) {
-  //   let value = event.target.value;
-  //   this.setState({
-  //     [event.target.name]: value,
-  //     // find the key in state by name
-  //   });
-  //   // console.log(event.target.value)
-  // }
   
-  // handleSubmit (event) {
-  //     event.preventDefault();
-  //     console.log(this.state)
-  //   //  debugger
-  //    // set up our recipe object 
-  //    this.props.createRecipes(this.state)
-  //    this.props.history.push("/recipes");
-  // }
-
   render() {
     return (
       <div>
@@ -40,6 +15,7 @@ class RecipeForm extends Component {
             name="name"
             placeholder="Add food name here"
             value={this.props.value.name}
+            defaultValue="food"
             onChange={(event) => this.props.handleOnChange(event)}
           />
           <label className="foodLabel">Category</label>
@@ -90,3 +66,31 @@ class RecipeForm extends Component {
 
 // export default  withRouter(connect(null, mapDispatchToProps)(RecipeForm));
 export default (RecipeForm)
+
+
+
+// state = {
+  //   name: "",
+  //   category: "",
+  //   area: "",
+  //   image_url: "",
+  //   youtube_url: "",
+  // };
+
+  // handleOnChange(event) {
+  //   let value = event.target.value;
+  //   this.setState({
+  //     [event.target.name]: value,
+  //     // find the key in state by name
+  //   });
+  //   // console.log(event.target.value)
+  // }
+  
+  // handleSubmit (event) {
+  //     event.preventDefault();
+  //     console.log(this.state)
+  //   //  debugger
+  //    // set up our recipe object 
+  //    this.props.createRecipes(this.state)
+  //    this.props.history.push("/recipes");
+  // }

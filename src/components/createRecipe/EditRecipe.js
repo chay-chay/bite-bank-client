@@ -4,35 +4,69 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 
-const EditRecipe = (props) => {
-// console.log(props)
+class EditRecipe extends Component {
+
+    constructor(props) {
+        // options 1
+        // det defaultstate
+        // access props.match.params.id
+        //use id to find recipe
+
+        //options 2 
+        // load the form
+        // debugger
+        
+        super(props);
+        console.log(this.props.route.match.params.id)
+        console.log(props.recipes)
+           const [getRecipeId] = props.recipes.filter(item => {
+               console.log(typeof(item.id))
+              return item.id == props.route.match.params.id})
+        console.log(getRecipeId.name)
+       
+        
+
+        this.state = {
+            name: getRecipeId.name,
+            category: getRecipeId.category,
+            area: getRecipeId.area,
+            image_url: getRecipeId.image_url,
+            youtube_url: getRecipeId.youtube_url,
+        }
+        this.handleOnChange =this.handleOnChange.bind(this);
+        this.handleSubmit =this.handleSubmit.bind(this)
+        console.log(getRecipeId.name)
+    }
+
 
     // fetchdata and match value
+   
 
-    // handleOnChange(event) {
-    //     let value = event.target.value;
-    //     this.setState({
-    //       [event.target.name]: value,
-    //       // find the key in state by name
-    //     });
-    //     console.log(event.target.value)
-    //   }
+    handleOnChange(event) {
+        let value = event.target.value;
+        this.setState({
+          [event.target.name]: value,
+          // find the key in state by name
+        });
+        console.log(event.target.value)
+      }
 
-    //   handleSubmit (event) {
-    //     event.preventDefault();
-    //     console.log(this.state)
-    //   //  debugger
-    //    // set up our recipe object 
-    //    this.props.createRecipes(this.state)
-    //    this.props.history.push("/recipes");
-    // }
+      handleSubmit (event) {
+        event.preventDefault();
+        console.log(this.state)
+      //  debugger
+    //    set up our recipe object 
+       this.props.editRecipes(this.state)
+       this.props.history.push("/recipes");
+    }
 
-    return (
-        
-        <div>
-            {/* <RecipeForm value={this.state} handleOnChange={this.handleOnChange} handleSubmit={this.handleSubmit}/> */}
-        </div>
-    )
+    render() {
+     
+        return (
+            // send ad default value to recipe obj
+            <div><RecipeForm value={this.state} handleOnChange={this.handleOnChange} handleSubmit={this.handleSubmit}/></div>
+        )
+    }
 }
 
 export default EditRecipe

@@ -55,12 +55,12 @@ class Recipe extends Component{
         
         <img src={this.props.recipe.image_url} className="recipe-image" />
         <div style={{ width: "auto", height: "20rem" }}>
-          <ReactPlayer
+          {/* <ReactPlayer
             url={this.props.recipe.youtube_url}
             width="100%"
             height="100%"
             // origin={window.location.host}
-          />
+          /> */}
   
         </div>
         <Link to ={ `/recipes/${this.props.recipe.id}/edit`}>
