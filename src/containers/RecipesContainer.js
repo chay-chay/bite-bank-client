@@ -6,9 +6,7 @@ import { connect } from "react-redux";
 import { fetchRecipes } from "../actions/recipesActions";
 import EditRecipe from "../components/createRecipe/EditRecipe"
 class RecipesContainer extends Component {
-  state = {
-    search: "",
-  };
+ 
 
   componentDidMount() {
     // where you make your fetch requests
@@ -35,9 +33,13 @@ class RecipesContainer extends Component {
   }
 }
 // get info out of the store
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+ 
+  const displayRecipe = state.recipes.filter((recipe) =>  
+        recipe.name.toLowerCase().includes(ownProps.searchTerm.toLowerCase()))
+
   return {
-    recipes: state.recipes,
+    recipes: displayRecipe,
     loading: state.loading,
   };
 };

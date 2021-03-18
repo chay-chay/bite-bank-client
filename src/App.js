@@ -7,17 +7,33 @@ import Home from './components/home/Home'
 // import CreateRecipe from './components/createRecipe/CreateRecipe'
 import About from './components/about/About'
 import Footer from './components/footer/Footer'
+import RecipeFilter from './components/recipeFilter/RecipeFilter'
 
 class App extends Component {
+
+  state = {
+    search: ""
+  }
+
+  handleInputChange = (e) => {
+    const search = e.target.value
+    this.setState({search: search}) // will cause a rerender
+  }
+
   render() {
     return (
       <div>
          <Router>
          <Navbar />
+         <RecipeFilter search={this.state.search} handleInputChange={this.handleInputChange} />
           <Switch>         
-      
+        
           <Route exact path="/" component={Home} /> 
-          <Route path="/recipes" component={RecipesContainer} />
+          {/* <Route path="/recipes" component={RecipesContainer} /> */}
+          <Route exact path="/recipes">
+            <RecipesContainer searchTerm={this.state.search} />
+           
+          </Route>
         
           <Route path="/about" component={About} /> 
           </Switch>
