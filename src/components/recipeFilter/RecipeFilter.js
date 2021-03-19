@@ -1,10 +1,16 @@
 import React from "react";
 import "./recipeFilter.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheckSquare, faSearch } from "@fortawesome/fontawesome-free-solid";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import { faSearch } from "@fortawesome/fontawesome-free-solid";
+import { connect } from "react-redux";
 
 const RecipeFilter = (props) => {
+
+    const handleOnChange = (event) =>{
+        debugger
+       
+    }
+
   return (
     <div className="box">
       <div class="clearfix searchform">
@@ -14,24 +20,38 @@ const RecipeFilter = (props) => {
           placeholder="What are you looking for?"
           onChange={props.handleInputChange}
         />
-        <FontAwesomeIcon icon={faSearch} />
+
+        <select onChange={(event)=> handleOnChange(event.target.value)}>
+            <option
+            value="all">
+                All
+            </option>
+            {props.categories.map((category) => <option value={category}>{category}</option>)}
+             {/* <option
+            value="name">
+                name
+            </option>
+            <option
+            value="category">
+                Category
+            </option>
+            <option
+            value="area">
+                area
+            </option> */}
+        </select>
+
+        <label for="search-box">
+          <FontAwesomeIcon icon={faSearch} />
+        </label>
       </div>
     </div>
   );
 };
-export default RecipeFilter;
 
-// <div className="container h-100">
-// <div className="d-flex justify-content-center h-100">
-//   <div className="searchbar">
-//   <input className="search_input"type="text" placeholder="Search for a meal..." onChange={props.handleInputChange}/>
-//     <a href="#" className="search_icon"><i class="fas fa-search"></i></a>
-//   </div>
-// </div>
-// </div>
-
-{
-  /* <div>
-            <input type="text" placeholder="Search for a meal..." onChange={props.handleInputChange}/>
-        </div> */
+const mapStateToProps = state => {
+  return { 
+    categories: state.categories,
+  }
 }
+export default connect(mapStateToProps)(RecipeFilter);

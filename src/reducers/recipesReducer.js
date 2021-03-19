@@ -1,5 +1,5 @@
 
-const recipesReducer = (state = {recipes: [], loading: false}, action) => {
+const recipesReducer = (state = {recipes: [],categories:[], area:[], loading: false}, action) => {
     
     switch (action.type) {
         case "LOADING":
@@ -25,25 +25,47 @@ const recipesReducer = (state = {recipes: [], loading: false}, action) => {
         // const filterUpdate = state.recipes.filter(recipe => recipe.id === action.payload.id) 
         const filterUpdate = state.recipes.map(recipe => {
             if (recipe.id === action.payload.id){
-                return {...recipe, name:action.payload.name,
-                    category:action.payload.category,
-                    area:action.payload.area,
-                    image_url:action.payload.image_url,
-                    youtube_url:action.payload.youtube_url
-                  } 
+                return action.payload
+                // return {...recipe, name:action.payload.name,
+                //     category:action.payload.category,
+                //     area:action.payload.area,
+                //     image_url:action.payload.image_url,
+                //     youtube_url:action.payload.youtube_url
+                //   } 
                 } else {
                       return recipe
                   }
         
             }
         )
-
-   
-        console.log(filterUpdate)
+           
+        // console.log(filterUpdate)
         return { ...state, recipes: filterUpdate }
+
+        // Option 2
+                 // const recipeIndex = state.recipes.findIndex(recipe => {
+            //     return recipe.id === action.payload.id
+            // })
+        //     return {...state, recipes: [...state, ]}
                 
-                
-                
+        case "LOAD_CATEGORIES":
+            let categories = [];
+                 
+            function onlyUnique(value, index, self) {
+                return self.indexOf(value) === index;
+              }
+              
+              // usage example:
+              state.recipes.map(recipe => {
+                categories.push(recipe.category)
+            })
+              const array = categories.filter(onlyUnique);
+            // debugger
+        return {...state, loading: false, categories: array};
+       
+
+       
+     
         default:
             return state;
     }

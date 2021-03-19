@@ -12,12 +12,16 @@ import RecipeFilter from './components/recipeFilter/RecipeFilter'
 class App extends Component {
 
   state = {
-    search: ""
+    search: "",
+    filter: ""
   }
 
   handleInputChange = (e) => {
     const search = e.target.value
-    this.setState({search: search}) // will cause a rerender
+    // this.setState({search: search}) // will cause a rerender
+    this.setState(prevState => ({
+      
+    })) /
   }
 
   render() {
