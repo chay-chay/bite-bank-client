@@ -17,11 +17,10 @@ class App extends Component {
   }
 
   handleInputChange = (e) => {
-    const search = e.target.value
-    // this.setState({search: search}) // will cause a rerender
-    this.setState(prevState => ({
-      
-    })) /
+    
+    // const search = e.target.value
+    this.setState({[e.target.name]: e.target.value}, () => console.log(this.state)) // will cause a rerender
+    
   }
 
   render() {
@@ -35,7 +34,7 @@ class App extends Component {
           <Route exact path="/" component={Home} /> 
           {/* <Route path="/recipes" component={RecipesContainer} /> */}
           <Route path="/recipes">
-            <RecipesContainer searchTerm={this.state.search} />
+            <RecipesContainer searchTerm={this.state.search} filterTerm={this.state.filter}/>
            
           </Route>
         

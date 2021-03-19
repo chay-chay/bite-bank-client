@@ -11,7 +11,7 @@ const recipesReducer = (state = {recipes: [],categories:[], area:[], loading: fa
         return {...state, loading: false, recipes: action.payload};
 
         case "ADDED_RECIPE":
-            return { ...state, recipes: [...state.recipes, action.payload] }    
+            return { ...state, recipes: [...state.recipes, action.payload], categories: [...state.categories, action.payload.category] }    
             
         case "DELETE_RECIPE":
             const filteredRecipe = state.recipes.filter(recipe => recipe.id !== action.payload.id)
@@ -51,11 +51,9 @@ const recipesReducer = (state = {recipes: [],categories:[], area:[], loading: fa
         case "LOAD_CATEGORIES":
             let categories = [];
                  
-            function onlyUnique(value, index, self) {
+            const onlyUnique = (value, index, self) => {
                 return self.indexOf(value) === index;
               }
-              
-              // usage example:
               state.recipes.map(recipe => {
                 categories.push(recipe.category)
             })

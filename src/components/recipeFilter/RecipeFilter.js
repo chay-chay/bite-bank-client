@@ -6,25 +6,22 @@ import { connect } from "react-redux";
 
 const RecipeFilter = (props) => {
 
-    const handleOnChange = (event) =>{
-        debugger
-       
-    }
-
+   
   return (
     <div className="box">
       <div class="clearfix searchform">
         <input
+          name="search"
           type="search"
           id="search-box"
           placeholder="What are you looking for?"
           onChange={props.handleInputChange}
         />
 
-        <select onChange={(event)=> handleOnChange(event.target.value)}>
+        <select name="filter"onChange={props.handleInputChange}>
             <option
-            value="all">
-                All
+            value="">
+                Category
             </option>
             {props.categories.map((category) => <option value={category}>{category}</option>)}
              {/* <option

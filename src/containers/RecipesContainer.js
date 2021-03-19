@@ -44,10 +44,12 @@ class RecipesContainer extends Component {
 const mapStateToProps = (state, ownProps) => {
  
   const displayRecipe = state.recipes.filter((recipe) =>  
-        recipe.name.toLowerCase().includes(ownProps.searchTerm.toLowerCase())
-      || recipe.category.toLowerCase().includes(ownProps.searchTerm.toLowerCase())
+        (recipe.name.toLowerCase().includes(ownProps.searchTerm.toLowerCase()) 
+          || recipe.category.toLowerCase().includes(ownProps.searchTerm.toLowerCase())
       || recipe.area.toLowerCase().includes(ownProps.searchTerm.toLowerCase()))
-
+       &&  recipe.category.toLowerCase().includes(ownProps.filterTerm.toLowerCase()))
+    
+  
   return {
     recipes: displayRecipe,
     loading: state.loading,
