@@ -44,22 +44,21 @@ class Recipe extends Component{
   render(){
     return (
       <div className="recipe card">
-        <h2> {this.props.recipe.name}</h2>
-       
-          <div>
-          <div className="category">
-          <h4>Category: {this.props.recipe.category}</h4>
-          </div>
         
-          
-       <h4>Ethnic: {this.props.recipe.area}</h4>
+        <h2> {this.props.recipe.name}</h2>
+       <div className="meal-info">
+          <div className="meal-info-left">
+            <h4>Category: {this.props.recipe.category}</h4>
+            <h4>Ethnic: {this.props.recipe.area}</h4>
+          </div>
+    
+          <div className="meal-info-right">
+            <img src={this.props.recipe.image_url} className="recipe-image" />
+          </div>
        </div>
          
-        </div>
-      
-      
-        
-        <img src={this.props.recipe.image_url} className="recipe-image" />
+
+       
         <div style={{ width: "auto", height: "20rem" }}>
           {/* <ReactPlayer
             url={this.props.recipe.youtube_url}

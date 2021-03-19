@@ -17,11 +17,11 @@ class EditRecipe extends Component {
         // debugger
         
         super(props);
-        console.log(this.props.route.match.params.id)
-        console.log(props.recipes)
+        // console.log(this.props.route.match.params.id)
+        // console.log(props.recipes)
            const [getRecipeId] = props.recipes.filter(item => {
-               console.log(typeof(item.id))
-              return item.id == props.route.match.params.id})
+            //    console.log(typeof(item.id))
+              return item.id.toString() === props.route.match.params.id.toString()})
         console.log(getRecipeId.name)
        
         
