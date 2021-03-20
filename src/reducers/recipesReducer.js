@@ -1,5 +1,5 @@
 
-const recipesReducer = (state = {recipes: [],categories:[], area:[], loading: false}, action) => {
+const recipesReducer = (state = {recipes: [],categories:[], areas:[], loading: false}, action) => {
     
     switch (action.type) {
         case "LOADING":
@@ -11,7 +11,8 @@ const recipesReducer = (state = {recipes: [],categories:[], area:[], loading: fa
         return {...state, loading: false, recipes: action.payload};
 
         case "ADDED_RECIPE":
-            return { ...state, recipes: [...state.recipes, action.payload], categories: [...state.categories, action.payload.category] }    
+            return { ...state, recipes: [...state.recipes, action.payload], 
+                categories: [...state.categories, action.payload.category] }    
             
         case "DELETE_RECIPE":
             const filteredRecipe = state.recipes.filter(recipe => recipe.id !== action.payload.id)
@@ -22,6 +23,7 @@ const recipesReducer = (state = {recipes: [],categories:[], area:[], loading: fa
         //     return {...state, recipe: filterUpdate }
     
         case "UPDATE_MEAL": 
+        console.log(state)
         // const filterUpdate = state.recipes.filter(recipe => recipe.id === action.payload.id) 
         const filterUpdate = state.recipes.map(recipe => {
             if (recipe.id === action.payload.id){
@@ -60,7 +62,21 @@ const recipesReducer = (state = {recipes: [],categories:[], area:[], loading: fa
               const array = categories.filter(onlyUnique);
             // debugger
         return {...state, loading: false, categories: array};
-       
+
+        case "LOAD_AREAS":
+            let areas = [];
+            const unique = (value, index, self) => {
+                return self.indexOf(value) === index;
+              }
+              state.recipes.map(recipe => {
+                areas.push(recipe.area)
+            })
+           
+              const arrayAreas = areas.filter(unique);
+            // debugger
+            console.log(arrayAreas)
+        return {...state, loading: false, areas: arrayAreas};
+    
 
        
      

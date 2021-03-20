@@ -23,7 +23,9 @@ export const fetchRecipes = () => {
         .then(data => {
               // instead of setState, we need to dispatch an action
             dispatch(loadRecipes(data))
-            dispatch({type: "LOAD_CATEGORIES"}) // dispatching an action to the reducer
+            dispatch({type: "LOAD_CATEGORIES"}) 
+            dispatch({type: "LOAD_AREAS"})
+            // dispatching an action to the reducer
             // pass the data as an argument
             // console.log("F")
         })

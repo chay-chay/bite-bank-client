@@ -44,7 +44,7 @@ class Recipe extends Component{
   render(){
     return (
       <div className="recipe card">
-        
+       
         <h2> {this.props.recipe.name}</h2>
        <div className="meal-info">
           <div className="meal-info-left">

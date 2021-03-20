@@ -12,7 +12,7 @@ class Recipes extends Component {
     render(){     
         return (
             <div className="recipes">
-            {this.props.loading ? <h1>LOADING....</h1> : this.getRecipes()}
+             {this.props.loading ? <h1>LOADING....</h1> : this.getRecipes()}
             {this.getRecipes()}
            
             </div>

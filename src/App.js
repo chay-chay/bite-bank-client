@@ -13,7 +13,8 @@ class App extends Component {
 
   state = {
     search: "",
-    filter: ""
+    filter: "",
+    filterArea: "",
   }
 
   handleInputChange = (e) => {
@@ -23,18 +24,25 @@ class App extends Component {
     
   }
 
+  handleOnClick = (git ) => {
+    this.setState({ 
+      search: "",
+    filter: "",
+    filterArea: ""}, () => console.log(this.state))
+  }
+
   render() {
     return (
       <div>
          <Router>
          <Navbar />
-         <RecipeFilter search={this.state.search} handleInputChange={this.handleInputChange} />
+         <RecipeFilter search={this.state.search} handleInputChange={this.handleInputChange} handleOnClick={this.handleOnClick}/>
           <Switch>         
         
           <Route exact path="/" component={Home} /> 
           {/* <Route path="/recipes" component={RecipesContainer} /> */}
           <Route path="/recipes">
-            <RecipesContainer searchTerm={this.state.search} filterTerm={this.state.filter}/>
+            <RecipesContainer searchTerm={this.state.search} filterTerm={this.state.filter} filterAreaTerm={this.state.filterArea}/>
            
           </Route>
         

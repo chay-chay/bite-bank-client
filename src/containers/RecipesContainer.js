@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router";
+import {  Route } from "react-router";
 import Recipes from "../components/recipes/Recipes";
 import CreateRecipe from "../components/createRecipe/CreateRecipe";
 import { connect } from "react-redux";
@@ -21,17 +21,12 @@ class RecipesContainer extends Component {
         {/* <Switch> */}
           <Route exact path="/recipes">
             <Recipes recipes={this.props.recipes} />
-           
           </Route>
           
           <Route exact path="/recipes/new" component={CreateRecipe} />
           <Route exact path="/recipes/:id/edit" component={ (routeInfo) => <EditRecipe route={routeInfo} recipes={this.props.recipes} />} />  
           {/* allows to pass the props, so routs & match inf */}
           {/* functional component pass the routes if and can have if else statement here */}
-
-          {/* <Route exact path="/recipes/:id/edit">
-            <EditRecipe recipes={this.props.recipes} />
-          </Route> */}
 
           {/* // find recipe match id  and pass found recipe to the form as a props */}
         {/* </Switch> */}
@@ -42,18 +37,21 @@ class RecipesContainer extends Component {
 }
 // get info out of the store
 const mapStateToProps = (state, ownProps) => {
- 
+
   const displayRecipe = state.recipes.filter((recipe) =>  
         (recipe.name.toLowerCase().includes(ownProps.searchTerm.toLowerCase()) 
           || recipe.category.toLowerCase().includes(ownProps.searchTerm.toLowerCase())
       || recipe.area.toLowerCase().includes(ownProps.searchTerm.toLowerCase()))
-       &&  recipe.category.toLowerCase().includes(ownProps.filterTerm.toLowerCase()))
-    
+       &&  recipe.category.toLowerCase().includes(ownProps.filterTerm.toLowerCase())
+       &&  recipe.area.toLowerCase().includes(ownProps.filterAreaTerm.toLowerCase()))
+      
   
   return {
+    
     recipes: displayRecipe,
     loading: state.loading,
-    categories: state.categories
+    categories: state.categories,
+    areas: state.area
   };
 };
 // this dispatch cause a reducer to run
