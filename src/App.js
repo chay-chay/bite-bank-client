@@ -24,19 +24,14 @@ class App extends Component {
     
   }
 
-  handleOnClick = (git ) => {
-    this.setState({ 
-      search: "",
-    filter: "",
-    filterArea: ""}, () => console.log(this.state))
-  }
+  
 
   render() {
     return (
       <div>
          <Router>
          <Navbar />
-         <RecipeFilter search={this.state.search} handleInputChange={this.handleInputChange} handleOnClick={this.handleOnClick}/>
+         <RecipeFilter search={this.state.search} handleInputChange={this.handleInputChange} />
           <Switch>         
         
           <Route exact path="/" component={Home} /> 

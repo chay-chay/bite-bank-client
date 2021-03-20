@@ -42,6 +42,7 @@ class Recipe extends Component{
   }
 
   render(){
+    // console.log(this.props.recipe.youtube_url)
     return (
       <div className="recipe card">
        
@@ -53,25 +54,25 @@ class Recipe extends Component{
           </div>
     
           <div className="meal-info-right">
-            <img src={this.props.recipe.image_url} className="recipe-image" />
+            <img src={this.props.recipe.image_url} alt="food" className="recipe-image" />
           </div>
        </div>
          
 
        
-        <div style={{ width: "auto", height: "20rem" }}>
-          {/* <ReactPlayer
+        {/* <div style={{ width: "auto", height: "20rem" }}>
+           <ReactPlayer
             url={this.props.recipe.youtube_url}
             width="100%"
             height="100%"
             // origin={window.location.host}
-          /> */}
+          />  */}
   
-        </div>
+        {/* </div> */}
         <Link to ={ `/recipes/${this.props.recipe.id}/edit`}>
-          <button>Edit</button>
+          <button className="button" >Edit</button>
         </Link>
-       <button className="delete-button" onClick={this.handleClick}>Delete</button>
+       <button className="button" onClick={this.handleClick}>Delete</button>
       
       </div>
     );

@@ -9,11 +9,12 @@ class Recipes extends Component {
       return this.props.recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />)
     }
     
-    render(){     
+    render(){  
+      console.log(this.props.recipes)   
         return (
             <div className="recipes">
              {this.props.loading ? <h1>LOADING....</h1> : this.getRecipes()}
-            {this.getRecipes()}
+            
            
             </div>
             )

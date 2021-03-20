@@ -56,7 +56,7 @@ const recipesReducer = (state = {recipes: [],categories:[], areas:[], loading: f
             const onlyUnique = (value, index, self) => {
                 return self.indexOf(value) === index;
               }
-              state.recipes.map(recipe => {
+              state.recipes.forEach(recipe => {
                 categories.push(recipe.category)
             })
               const array = categories.filter(onlyUnique);
@@ -68,8 +68,8 @@ const recipesReducer = (state = {recipes: [],categories:[], areas:[], loading: f
             const unique = (value, index, self) => {
                 return self.indexOf(value) === index;
               }
-              state.recipes.map(recipe => {
-                areas.push(recipe.area)
+              state.recipes.forEach(recipe => {
+               areas.push(recipe.area)
             })
            
               const arrayAreas = areas.filter(unique);

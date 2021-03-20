@@ -15,7 +15,6 @@ class RecipeForm extends Component {
             name="name"
             placeholder="Add food name here"
             value={this.props.value.name}
-            defaultValue="food"
             onChange={(event) => this.props.handleOnChange(event)}
           />
           <label className="foodLabel">Category</label>
