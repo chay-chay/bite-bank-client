@@ -27,15 +27,6 @@ class Navbar extends Component {
       About
       </NavLink> 
 
-        {/* <header className="Header">
-          <p  className="Logo" alt="logo"> LOGO</p>
-          <nav className="Nav">     
-            <a href="/">HOME</a>       
-            <a href="/recipes">Recipes</a>     
-            <a href="/new">Create Recipe</a>
-            <a href="/about">About</a>
-          </nav>
-        </header> */}
       </div>
     );
   }

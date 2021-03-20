@@ -11,7 +11,8 @@ const RecipeFilter = (props) => {
   //  }
   return (
     <div className="box">
-      <div className="clearfix searchform">
+      <div className="filter-info">
+        <div className="clearfix searchform">
         <input
           name="search"
           type="search"
@@ -23,7 +24,10 @@ const RecipeFilter = (props) => {
         <label className="search-box">
           <FontAwesomeIcon icon={faSearch} />
         </label>
-
+      </div>
+      
+        <div>
+        <label className="label-search">Filter By: </label>
         <select
           className="filter-select"
           name="filter"
@@ -41,11 +45,13 @@ const RecipeFilter = (props) => {
           name="filterArea"
           onChange={props.handleInputChange}
         >
-          <option value="">Area</option>
+          <option value="">Ethnic</option>
           {props.areas.map((area, i) => (
             <option key={i} value={area}>{area}</option>
           ))}
         </select>
+        </div>
+        
 
 
       </div>

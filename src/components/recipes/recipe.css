@@ -9,9 +9,10 @@ body{
      width: 500px;
      /* flex-direction: row; */
       display: inline-table;
-      padding: 2rem;
-      margin: 1.5rem;
+      padding: 0.5rem 3rem 0.6rem 3rem;
+      margin: 0.5em 1em 1em 1.3em;
       border-radius: 8px;
+     
 }
 .recipe-image{
     border: 1px solid #ddd;
@@ -89,5 +90,4 @@ body{
   .button:after {
     background-image: linear-gradient(90deg, transparent, #3bd1d3);
   }
-  
   
