@@ -1,0 +1,21 @@
+
+  .logo-image{
+    width: 500px;
+    height: 500px;
+}
+
+.about{
+  display: flex;
+  justify-content:space-around;
+  padding: 2rem 5%;
+  text-align: center;
+}
+
+.about-text{
+  text-align: left;
+  
+}
+
+.about-header{
+  text-align: center;
+}

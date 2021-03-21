@@ -3,13 +3,8 @@ import "./recipe.css";
 import ReactPlayer from "react-player";
 import { connect } from "react-redux";
 import { removeRecipe } from "../../actions/recipesActions";
-// import { makeStyles } from '@material-ui/core/styles';
-// import Paper from '@material-ui/core/Paper';
-// import Grid from '@material-ui/core/Grid';
 import { Link } from "react-router-dom";
-// import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import { withRouter } from "react-router-dom";
-
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 class Recipe extends Component {

@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import "./Navbar.css"
+
 class Navbar extends Component {
   render() {
     return (
       <div className="Nav">
-          
+
+
         <NavLink activeStyle={{background: '#19d3da'
           }} to="/" className="main-nav" exact>
           Home

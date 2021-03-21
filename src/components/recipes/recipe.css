@@ -1,17 +1,18 @@
 body{
     text-align: center;
-    background-color: rgba(197, 228, 233, 0.658);
+    background-color: #e0fbfc;
 }
 
 .recipe{
     text-align: center;
-    background-color: #f1f8f7;
+    background-color: #ffffff;
      width: 500px;
      /* flex-direction: row; */
       display: inline-table;
       padding: 0.5rem 3rem 0.6rem 3rem;
-      margin: 0.5em 1em 1em 1.3em;
+      margin: 0.5em 1em 1em 1em;
       border-radius: 8px;
+      
      
 }
 .recipe-image{
