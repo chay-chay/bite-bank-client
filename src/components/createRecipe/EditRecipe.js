@@ -4,17 +4,12 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { updateRecipe } from "../../actions/recipesActions"
 
+
 class EditRecipe extends Component {
 
     constructor(props) {
-        // options 1
-        // det defaultstate
         // access props.match.params.id
         //use id to find recipe
-
-        //options 2 
-        // load the form
-        // debugger
         
         super(props);
         // console.log(this.props.route.match.params.id)
@@ -35,14 +30,14 @@ class EditRecipe extends Component {
         }
         this.handleOnChange =this.handleOnChange.bind(this);
         this.handleSubmit =this.handleSubmit.bind(this)
-        console.log(getRecipeId.name)
+        // console.log(getRecipeId.name)
     }
 
 
     // fetchdata and match value
    
 
-    handleOnChange(event) {
+    handleOnChange (event) {
         let value = event.target.value;
         this.setState({
           [event.target.name]: value,

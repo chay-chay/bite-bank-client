@@ -1,38 +1,48 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-import "./Navbar.css"
+import "./Navbar.css";
 
-class Navbar extends Component {
-  render() {
-    return (
-      <div className="Nav">
+const Navbar = () => {
+  return (
+    <div className="Nav">
+      <NavLink
+        activeStyle={{ background: "#19d3da" }}
+        to="/"
+        className="main-nav"
+        exact
+      >
+        Home
+      </NavLink>
 
-
-        <NavLink activeStyle={{background: '#19d3da'
-          }} to="/" className="main-nav" exact>
-          Home
-        </NavLink>
-
-        <NavLink activeStyle={{background: '#19d3da'
-          }} to="/recipes" className="main-nav" exact>
+      <NavLink
+        activeStyle={{ background: "#19d3da" }}
+        to="/recipes"
+        className="main-nav"
+        exact
+      >
         Recipes
       </NavLink>
 
-      <NavLink activeStyle={{background: '#19d3da'
-          }} to="/recipes/new" className="main-nav" exact>
+      <NavLink
+        activeStyle={{ background: "#19d3da" }}
+        to="/recipes/new"
+        className="main-nav"
+        exact
+      >
         Create Meal
       </NavLink>
 
-      <NavLink activeStyle={{background: '#19d3da'
-          }} to="/about" className="main-nav" exact>
-      About
-      </NavLink> 
-
-      </div>
-    );
-  }
-}
+      <NavLink
+        activeStyle={{ background: "#19d3da" }}
+        to="/about"
+        className="main-nav"
+        exact
+      >
+        About
+      </NavLink>
+    </div>
+  );
+};
 
 export default Navbar;
-

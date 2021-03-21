@@ -5,7 +5,7 @@ import { createRecipes } from "../../actions/recipesActions"
 import { withRouter } from "react-router-dom";
 
 class CreateRecipe extends Component {
- 
+
     state = {
               name: "",
               category: "",
@@ -13,7 +13,6 @@ class CreateRecipe extends Component {
               image_url: "",
               youtube_url: "",
           }
-
     handleOnChange = (event) => {
         let value = event.target.value;
         this.setState({
@@ -23,7 +22,7 @@ class CreateRecipe extends Component {
         console.log(event.target.value)
       }
 
-      handleSubmit = (event) =>  {
+      handleSubmit = (event) => {
         event.preventDefault();
         console.log(this.state)
       //  debugger

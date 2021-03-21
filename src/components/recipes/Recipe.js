@@ -21,7 +21,7 @@ class Recipe extends Component {
           onClick: () => {
             alert("Your meal has been deleted!");
             this.props.removeRecipe(this.props.recipe.id);
-            this.props.history.push("/recipes");
+            this.props.history.push("/");
           },
         },
         {
