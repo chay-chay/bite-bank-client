@@ -5,21 +5,16 @@ import { createRecipes } from "../../actions/recipesActions"
 import { withRouter } from "react-router-dom";
 
 class CreateRecipe extends Component {
-    constructor(props) {
-        // console.log(props)
-        super(props);
-        this.state = {
-            name: "",
-            category: "",
-            area: "",
-            image_url: "",
-            youtube_url: "",
-        }
-        this.handleOnChange =this.handleOnChange.bind(this);
-        this.handleSubmit =this.handleSubmit.bind(this)
-    }
+ 
+    state = {
+              name: "",
+              category: "",
+              area: "",
+              image_url: "",
+              youtube_url: "",
+          }
 
-    handleOnChange(event) {
+    handleOnChange = (event) => {
         let value = event.target.value;
         this.setState({
           [event.target.name]: value,
@@ -28,7 +23,7 @@ class CreateRecipe extends Component {
         console.log(event.target.value)
       }
 
-      handleSubmit (event) {
+      handleSubmit = (event) =>  {
         event.preventDefault();
         console.log(this.state)
       //  debugger

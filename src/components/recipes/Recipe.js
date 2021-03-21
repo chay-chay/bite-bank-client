@@ -21,7 +21,7 @@ class Recipe extends Component {
           onClick: () => {
             alert("Your meal has been deleted!");
             this.props.removeRecipe(this.props.recipe.id);
-            this.props.history.push("/");
+            this.props.history.push("/recipes");
           },
         },
         {
@@ -57,7 +57,7 @@ class Recipe extends Component {
             url={this.props.recipe.youtube_url}
             width="100%"
             height="100%"
-            // origin={window.location.host}
+            origin={window.location.origin}
           />
         </div>
         <Link to={`/recipes/${this.props.recipe.id}/edit`}>
