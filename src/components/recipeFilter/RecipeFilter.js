@@ -6,9 +6,6 @@ import { connect } from "react-redux";
 
 const RecipeFilter = (props) => {
 
-  //  const handleOnClick = () => {
-     
-  //  }
   return (
     <div className="box">
       <div className="filter-info">
@@ -45,7 +42,7 @@ const RecipeFilter = (props) => {
           name="filterArea"
           onChange={props.handleInputChange}
         >
-          <option value="">Ethnic</option>
+          <option value="">Ethnicity</option>
           {props.areas.map((area, i) => (
             <option key={i} value={area}>{area}</option>
           ))}

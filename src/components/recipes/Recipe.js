@@ -40,7 +40,7 @@ class Recipe extends Component {
         <div className="meal-info">
           <div className="meal-info-left">
             <h4>Category: {this.props.recipe.category}</h4>
-            <h4>Ethnic: {this.props.recipe.area}</h4>
+            <h4>Ethnicity: {this.props.recipe.area}</h4>
           </div>
 
           <div className="meal-info-right">

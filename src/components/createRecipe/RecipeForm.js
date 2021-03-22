@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import "./createRecipe.css";
-// import { connect } from "react-redux";
-// import { createRecipes } from "../../actions/recipesActions"
-// import { withRouter } from "react-router-dom";
+
 class RecipeForm extends Component {
   
   render() {
@@ -25,11 +23,11 @@ class RecipeForm extends Component {
             value={this.props.value.category}
             onChange={(event) => this.props.handleOnChange(event)}
           />
-          <label className="foodLabel">Ethnic</label>
+          <label className="foodLabel">Ethnicity</label>
           <input
             type="text"
             name="area"
-            placeholder="Add an ethnic of food here... ex.Thai, American, and French"
+            placeholder="Add the ethnicity of food here... ex.Thai, American, and French"
             value={this.props.value.area}
             onChange={(event) => this.props.handleOnChange(event)}
           />
@@ -56,40 +54,6 @@ class RecipeForm extends Component {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   console.log(dispatch)
-//   return {
-//     createRecipes: (recipe) => dispatch(createRecipes(recipe))
-//   }
-// }
 
-// export default  withRouter(connect(null, mapDispatchToProps)(RecipeForm));
-export default (RecipeForm)
+export default RecipeForm
 
-
-
-// state = {
-  //   name: "",
-  //   category: "",
-  //   area: "",
-  //   image_url: "",
-  //   youtube_url: "",
-  // };
-
-  // handleOnChange(event) {
-  //   let value = event.target.value;
-  //   this.setState({
-  //     [event.target.name]: value,
-  //     // find the key in state by name
-  //   });
-  //   // console.log(event.target.value)
-  // }
-  
-  // handleSubmit (event) {
-  //     event.preventDefault();
-  //     console.log(this.state)
-  //   //  debugger
-  //    // set up our recipe object 
-  //    this.props.createRecipes(this.state)
-  //    this.props.history.push("/recipes");
-  // }

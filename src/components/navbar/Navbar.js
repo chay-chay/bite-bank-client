@@ -21,7 +21,7 @@ const Navbar = () => {
         className="main-nav"
         exact
       >
-        Recipes
+        Meals
       </NavLink>
 
       <NavLink

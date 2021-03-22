@@ -30,7 +30,7 @@
   
   .searchform input[type=search]:focus {
     border-color: #58e9fc;
-    color: #7d30f8;
+    color: #9062fa;
     outline: 0;
   }
   
@@ -43,7 +43,7 @@
 
 .filter-select{
     border-radius: 25px;
-    color: rgb(80, 77, 77);
+    color:rgb(95, 227, 236);
     background-color: linear-gradient(90deg, #7b81ec, #3bd1d3);
     margin: 2em auto; 
     -webkit-appearance: none;
@@ -69,4 +69,5 @@
   display: inline;
   font-size:medium;
   font-weight: bold;
+  color: #535b5c;
 }

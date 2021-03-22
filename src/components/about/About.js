@@ -9,11 +9,13 @@ class About extends Component {
           <img src={biteBank} alt="logo" className="logo-image" />
         </div>
         <div className="about-text">
-          <h1 className="about-header">About!</h1>
-          <p>
-          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. 
-          Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+          <h1 className="about-header">About</h1>
+          <p className="about-info">
+          Have you ever watched a cooking video on the internet and thought "I would love to cook this later?".
+          Bite Bank is a media storage platform dedicated to the culinary arts. It allows for quick reference to cooking videos of interest by keeping a record of those you would like to flag and return to in the future.
+          Easily searchable by name, category, and ethnicity...Bite Bank is a useful tool for any chef!
           </p>
+          <p></p>
         </div>
       </div>
     );
