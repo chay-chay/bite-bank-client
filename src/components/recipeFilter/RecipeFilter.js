@@ -65,8 +65,8 @@ const RecipeFilter = (props) => {
           onChange={handleChange}
         >
           <option value="">Sort </option>
-          <option value="sortASC">Sort By ASC</option>
-          <option value="sortDESC">Sort By DES</option>
+          <option value="sortASC">Sort By A-Z</option>
+          <option value="sortDESC">Sort By Z-A</option>
           <option value="sortNew">Sort By Latest</option>
           {/* {props.recipes.map((recipe, i) => (
             <option key={i} value={recipe.name}>{recipe.name}</option>

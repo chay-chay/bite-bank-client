@@ -48,14 +48,15 @@
     margin: 2em auto; 
     -webkit-appearance: none;
     border: 6px solid rgba(255,255,255,0.45);
-    padding: 0.7em 2em;
+    padding: 0.7em 1em;
     background-repeat: no-repeat;
     background-size: 100%;
     background-clip: padding-box;
     cursor: pointer;
     text-align: center;
     font-weight: bold;
-    margin: 1.5rem;
+    margin: 1.5rem 0.5rem;
+    justify-content: center;
 }
 
 

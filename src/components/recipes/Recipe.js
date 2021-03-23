@@ -52,14 +52,14 @@ class Recipe extends Component {
           </div>
         </div>
 
-        {/* <div style={{ width: "auto", height: "20rem" }}>
+        <div style={{ width: "auto", height: "20rem" }}>
           <ReactPlayer
             url={this.props.recipe.youtube_url}
             width="100%"
             height="100%"
             origin={window.location.origin}
           />
-        </div> */}
+        </div>
         <Link to={`/recipes/${this.props.recipe.id}/edit`}>
           <button className="button">Edit</button>
         </Link>
