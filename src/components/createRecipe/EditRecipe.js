@@ -5,6 +5,8 @@ import { withRouter } from "react-router-dom";
 import { updateRecipe } from "../../actions/recipesActions"
 
 
+
+
 class EditRecipe extends Component {
 
     constructor(props) {
@@ -12,6 +14,7 @@ class EditRecipe extends Component {
         //use id to find recipe
         
         super(props);
+      
         // console.log(this.props.route.match.params.id)
         // console.log(props.recipes)
            const [getRecipeId] = props.recipes.filter(item => {
@@ -58,7 +61,7 @@ class EditRecipe extends Component {
     render() {
      
         return (
-            // send ad default value to recipe obj
+            // another option, send a default value to recipe obj 
             <div><RecipeForm value={this.state} handleOnChange={this.handleOnChange} handleSubmit={this.handleSubmit}/></div>
         )
     }

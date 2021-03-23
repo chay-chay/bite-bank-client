@@ -44,8 +44,7 @@ const mapStateToProps = (state, ownProps) => {
       || recipe.area.toLowerCase().includes(ownProps.searchTerm.toLowerCase()))
        &&  recipe.category.toLowerCase().includes(ownProps.filterTerm.toLowerCase())
        &&  recipe.area.toLowerCase().includes(ownProps.filterAreaTerm.toLowerCase()))
-      
-  
+     
   return {
     
     recipes: displayRecipe,

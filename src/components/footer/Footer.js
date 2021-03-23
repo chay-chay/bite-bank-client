@@ -2,6 +2,7 @@ import React from "react";
 import "./footer.css";
 import { SiGithub, SiYoutube, SiLinkedin } from "react-icons/si";
 import { FiMail } from "react-icons/fi";
+
 const Footer = () => (
   <div>
     <section>

@@ -15,6 +15,7 @@ class App extends Component {
     search: "",
     filter: "",
     filterArea: "",
+    
   }
 
   handleInputChange = (e) => {
@@ -37,7 +38,7 @@ class App extends Component {
           <Route exact path="/" component={Home} /> 
           {/* <Route path="/recipes" component={RecipesContainer} /> */}
           <Route path="/recipes">
-            <RecipesContainer searchTerm={this.state.search} filterTerm={this.state.filter} filterAreaTerm={this.state.filterArea}/>
+            <RecipesContainer searchTerm={this.state.search} filterTerm={this.state.filter} filterAreaTerm={this.state.filterArea}  />
            
           </Route>
         
@@ -49,5 +50,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
