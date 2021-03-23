@@ -16,6 +16,20 @@ body{
       
      
 }
+
+.recipes{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+ 
+}
+
+@media only screen and (max-width: 1020px){
+  .recipes{
+    justify-content: center;
+  }
+}
+
 .recipe-image{
     border: 1px solid rgb(221, 221, 221);
     border-radius: 4px;
