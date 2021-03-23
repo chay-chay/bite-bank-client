@@ -2,6 +2,7 @@
 
 ![bite-Bank](https://user-images.githubusercontent.com/72841865/112180492-fc2a7a00-8bd1-11eb-8b82-d5483b255d21.png)
 
+This is my final project of school and use React & Redux. Bite Bank is a media storage platform dedicated to the culinary arts. It allows for quick reference to cooking videos of interest by keeping a record of those you would like to flag and return to in the future. Easily searchable by name, category, and ethnicity…Bite Bank is a useful tool for any chef!
 
 
 
