@@ -7,7 +7,7 @@ const recipesReducer = (
       return { ...state, loading: true };
 
     case "LOAD_RECIPES":
-      console.log(action);
+      // console.log(action);
       // console.log("E")
       return { ...state, loading: false, recipes: action.payload };
 
@@ -79,7 +79,7 @@ const recipesReducer = (
       const arrayAreas = areas.filter(unique);
       // debugger
       
-      console.log(arrayAreas);
+      // console.log(arrayAreas);
       return { ...state, loading: false, areas: arrayAreas };
   
       case "SORT_BY_NAME":

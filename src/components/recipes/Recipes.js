@@ -10,12 +10,10 @@ class Recipes extends Component {
     }
     
     render(){  
-      console.log(this.props.recipes)   
+      // console.log(this.props.recipes)   
         return (
             <div className="recipes">
              {this.props.loading ? <h1>LOADING....</h1> : this.getRecipes()}
-            
-           
             </div>
             )
         }         

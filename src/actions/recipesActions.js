@@ -36,7 +36,6 @@ export const fetchRecipes = () => {
         dispatch(loadRecipes(data));
         dispatch({ type: "LOAD_CATEGORIES" });
         dispatch({ type: "LOAD_AREAS" });
-        // dispatch({ type: "ORDER_BY_NAME" });
         // dispatching an action to the reducer
         // pass the data as an argument
         // console.log("F")
@@ -100,7 +99,7 @@ export const updateRecipe = (recipeId, changeRecipe) => {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         dispatch(updatingRecipe(data));
         // dispatch({ type: "LOAD_CATEGORIES" });
         // dispatch({ type: "LOAD_AREAS" });

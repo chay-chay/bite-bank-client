@@ -18,19 +18,16 @@ class RecipesContainer extends Component {
   render() {
     return (
       <div id="recipes-container">
-        {/* <Switch> */}
           <Route exact path="/recipes">
-            <Recipes recipes={this.props.recipes} />
+            <Recipes recipes={this.props.recipes} loading={this.props.loading}/>
           </Route>
           
           <Route exact path="/recipes/new" component={CreateRecipe} />
+          
           <Route exact path="/recipes/:id/edit" component={ (routeInfo) => <EditRecipe route={routeInfo} recipes={this.props.recipes} />} />  
           {/* allows to pass the props, so routs & match inf */}
           {/* functional component pass the routes if and can have if else statement here */}
-
           {/* // find recipe match id  and pass found recipe to the form as a props */}
-        {/* </Switch> */}
-        {/* {this.props.loading ? <h1>LOADING....</h1> : this.getRecipes()} */}
       </div>
     );
   }

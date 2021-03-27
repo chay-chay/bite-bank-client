@@ -23,7 +23,7 @@ const EditRecipe = (props) => {
     //    console.log(typeof(item.id))
     return item.id.toString() === props.route.match.params.id.toString();
   });
-  console.log(getRecipeById.name);
+  // console.log(getRecipeById.name);
 
   // setEditField(getRecipeById)
   //use effects for callback function
@@ -35,7 +35,7 @@ const EditRecipe = (props) => {
 
   const handleOnChange = (event) => {
     let value = event.target.value;
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setEditField({
       [event.target.name]: value,
       // find the key in state by name
@@ -44,7 +44,7 @@ const EditRecipe = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(editFields);
+    // console.log(editFields);
     //       //  debugger
     //     //    set up our recipe object
     props.updateRecipe(props.route.match.params.id, editFields);

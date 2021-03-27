@@ -19,12 +19,12 @@ class CreateRecipe extends Component {
       [event.target.name]: value,
       // find the key in state by name
     });
-    console.log(event.target.value);
+    // console.log(event.target.value);
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state);
+    // console.log(this.state);
     //  debugger
     // set up our recipe object
     this.props.createRecipes(this.state);
@@ -47,7 +47,7 @@ class CreateRecipe extends Component {
 // export default CreateRecipe
 
 const mapDispatchToProps = (dispatch) => {
-  console.log(dispatch);
+  // console.log(dispatch);
   return {
     createRecipes: (recipe) => dispatch(createRecipes(recipe)),
   };
