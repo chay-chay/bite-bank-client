@@ -13,7 +13,7 @@ const Footer = () => (
       <div id="button"></div>
       <div id="container">
         <div id="cont">
-          <div class="footer_center">
+          <div className="footer_center">
             <h3 className="contact">
               Copyright Chayanit McCormick 2021 ©
               <a href="https://github.com/chay-chay/recipes-frontend">

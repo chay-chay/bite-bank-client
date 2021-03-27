@@ -18,7 +18,7 @@ const EditRecipe = (props) => {
   const [editFields, setEditField] = useState(initialState);
   // console.log(editFields)
   // editFileds = current state keep value of state
-  console.log(props);
+  // console.log(props);
   const [getRecipeById] = props.recipes.filter((item) => {
     //    console.log(typeof(item.id))
     return item.id.toString() === props.route.match.params.id.toString();
@@ -27,15 +27,17 @@ const EditRecipe = (props) => {
 
   // setEditField(getRecipeById)
   //use effects for callback function
-  // similar componentdidmount
+  // similar componentdidmount /unmount /update
   useEffect(() => {
     setEditField(getRecipeById);
-  }, [getRecipeById]); // if no , after {} it will run automatic loops [] - to run only one time
+  }, [getRecipeById]); 
+  // rerender every time getRecipeById
+  // if no , after {} it will run automatic loops [] - to run only one time
   // if put editFields, it will automatically run every time state change
 
   const handleOnChange = (event) => {
     let value = event.target.value;
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setEditField({
       [event.target.name]: value,
       // find the key in state by name
@@ -44,12 +46,13 @@ const EditRecipe = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(editFields);
+    // console.log(editFields);
     //       //  debugger
     //     //    set up our recipe object
     props.updateRecipe(props.route.match.params.id, editFields);
     props.history.push("/recipes");
   };
+
   return (
     <div>
       <div>
@@ -82,6 +85,7 @@ export default withRouter(connect(null, { updateRecipe })(EditRecipe));
 //               return item.id.toString() === props.route.match.params.id.toString()})
 //         console.log(getRecipeId.name)
 
+// do it in compunentdidupdate-check if props have recipe
 //         this.state = {
 //             name: getRecipeId.name,
 //             category: getRecipeId.category,

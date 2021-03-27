@@ -20,7 +20,7 @@ class RecipesContainer extends Component {
       <div id="recipes-container">
         {/* <Switch> */}
           <Route exact path="/recipes">
-            <Recipes recipes={this.props.recipes} />
+            <Recipes recipes={this.props.recipes} loading={this.props.loading}/>
           </Route>
           
           <Route exact path="/recipes/new" component={CreateRecipe} />
@@ -30,7 +30,7 @@ class RecipesContainer extends Component {
 
           {/* // find recipe match id  and pass found recipe to the form as a props */}
         {/* </Switch> */}
-        {/* {this.props.loading ? <h1>LOADING....</h1> : this.getRecipes()} */}
+        {/* {this.props.loading ? <h1>LOADING....</h1> : this.props.fetchRecipes()} */}
       </div>
     );
   }

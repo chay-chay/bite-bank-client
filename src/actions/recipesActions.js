@@ -17,9 +17,6 @@ export const updatingRecipe = (updatedRecipe) => {
   return { type: "UPDATE_MEAL", payload: updatedRecipe };
 };
 
-// export const orderByName = (recipes) => {
-//   return { type: "ORDER_BY_NAME", payload: recipes };
-// }
 
 // export const loadUpdate = (loadedRecipe) => {return{type:"LOAD_UPDATE", payload: loadedRecipe}}
 // thunk gives us the ability to return FUNCTIONS with a default argument of dispatch
@@ -48,6 +45,7 @@ export const fetchRecipes = () => {
 
 export const createRecipes = (recipe) => {
   // send a fetch request
+  
   return (dispatch) => {
     console.log(dispatch);
     const configObj = {
@@ -102,6 +100,7 @@ export const updateRecipe = (recipeId, changeRecipe) => {
       .then((data) => {
         console.log(data);
         dispatch(updatingRecipe(data));
+        // dispatch({ type: "UPDATE_MEAL", payload: data })
         // dispatch({ type: "LOAD_CATEGORIES" });
         // dispatch({ type: "LOAD_AREAS" });
       });

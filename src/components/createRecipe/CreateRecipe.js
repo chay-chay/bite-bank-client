@@ -24,7 +24,7 @@ class CreateRecipe extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state);
+    // console.log(this.state);
     //  debugger
     // set up our recipe object
     this.props.createRecipes(this.state);

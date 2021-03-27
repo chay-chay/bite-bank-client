@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./createRecipe.css";
+import { connect } from "react-redux";
 
 class RecipeForm extends Component {
   
@@ -16,6 +17,7 @@ class RecipeForm extends Component {
             onChange={(event) => this.props.handleOnChange(event)}
           />
           <label className="foodLabel">Category</label>
+          
           <input
             type="text"
             name="category"
@@ -23,6 +25,22 @@ class RecipeForm extends Component {
             value={this.props.value.category}
             onChange={(event) => this.props.handleOnChange(event)}
           />
+          <select 
+          name="category"
+          onChange={(event) => this.props.handleOnChange(event)}>
+           {/* {console.log(this.props.categories)} */}
+              {this.props.categories.map((category) => { 
+                return (
+                <option
+                value={category}>
+                  {category}
+                </option>
+                )
+              
+              })
+              }
+            
+          </select>
           <label className="foodLabel">Ethnicity</label>
           <input
             type="text"
@@ -55,5 +73,12 @@ class RecipeForm extends Component {
 }
 
 
-export default RecipeForm
+const mapStateToProp = (state) => {
+console.log(state)
+return {
+  categories: state.categories
+}
+}
+
+export default connect(mapStateToProp)(RecipeForm)
 

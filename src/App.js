@@ -19,7 +19,6 @@ class App extends Component {
   }
 
   handleInputChange = (e) => {
-    
     // const search = e.target.value
     this.setState({[e.target.name]: e.target.value}, () => console.log(this.state)) // will cause a rerender
     
@@ -43,7 +42,8 @@ class App extends Component {
           </Route>
         
           <Route path="/about" component={About} /> 
-          </Switch>
+          </Switch> 
+          {/* The <Switch /> component will only render the first route that matches/includes the path */}
          </Router> 
          <Footer />
       </div>

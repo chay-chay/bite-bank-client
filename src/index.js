@@ -12,9 +12,11 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 const store = createStore(recipesReducer, composeWithDevTools(applyMiddleware(thunk)));
 
+
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={store}> 
+    {/* component makes the Redux store available to any nested components that need to access the Redux store */}
       <App />
     </Provider>
   </React.StrictMode>,
