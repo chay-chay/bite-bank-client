@@ -3,6 +3,7 @@ const recipesReducer = (
   action
 ) => {
   switch (action.type) {
+    
     case "LOADING":
       return { ...state, loading: true };
 
