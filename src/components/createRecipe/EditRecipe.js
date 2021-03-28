@@ -31,7 +31,7 @@ const EditRecipe = (props) => {
   useEffect(() => {
     setEditField(getRecipeById);
   }, [getRecipeById]); // if no , after {} it will run automatic loops [] - to run only one time
-  // if put editFields, it will automatically run every time state change
+  // if put getRecipeById, it will automatically run every time state change
 
   const handleOnChange = (event) => {
     let value = event.target.value;
@@ -59,7 +59,7 @@ const EditRecipe = (props) => {
           handleSubmit={handleSubmit}
         />
       </div>
-      {editFields.name}
+      {/* {editFields.name} */}
     </div>
   );
 };

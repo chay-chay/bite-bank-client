@@ -25,10 +25,6 @@ const recipesReducer = (
       );
       return { ...state, recipe: filteredRecipe };
 
-    // case "LOAD_UPDATE":
-    //     const filterUpdate = state.recipes.map(recipe => recipe.id === action.payload.id )
-    //     return {...state, recipe: filterUpdate }
-
     case "UPDATE_MEAL":
       console.log(state);
       // const filterUpdate = state.recipes.filter(recipe => recipe.id === action.payload.id)
@@ -78,9 +74,6 @@ const recipesReducer = (
       });
 
       const arrayAreas = areas.filter(unique);
-      // debugger
-      
-      // console.log(arrayAreas);
       return { ...state, loading: false, areas: arrayAreas };
   
       case "SORT_BY_NAME":

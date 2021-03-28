@@ -3,19 +3,10 @@
 const url = "http://localhost:3000/recipes";
 
 // we have to pass an argument
-export const loadRecipes = (recipes) => {
-  return { type: "LOAD_RECIPES", payload: recipes };
-};
-export const addRecipe = (recipe) => ({
-  type: "ADDED_RECIPE",
-  payload: recipe,
-});
-export const deleteRecipe = (recipeId) => {
-  return { type: "DELETE_RECIPE", payload: recipeId };
-};
-export const updatingRecipe = (updatedRecipe) => {
-  return { type: "UPDATE_MEAL", payload: updatedRecipe };
-};
+export const loadRecipes = (recipes) => ({ type: "LOAD_RECIPES", payload: recipes });
+export const addRecipe = (recipe) => ({ type: "ADDED_RECIPE", payload: recipe });
+export const deleteRecipe = (recipeId) => ({ type: "DELETE_RECIPE", payload: recipeId });
+export const updatingRecipe = (updatedRecipe) => ({ type: "UPDATE_MEAL", payload: updatedRecipe });
 
 // thunk gives us the ability to return FUNCTIONS with a default argument of dispatch
 // asyn action works with thunk res for fetching recipes
@@ -56,7 +47,6 @@ export const createRecipes = (recipe) => {
       .then((resp) => resp.json())
       .then((data) => {
         dispatch(addRecipe(data));
-        
       })
       .catch((error) => console.log(error));
   };
@@ -99,8 +89,6 @@ export const updateRecipe = (recipeId, changeRecipe) => {
         dispatch(updatingRecipe(data));
         dispatch({ type: "LOAD_CATEGORIES" });
         dispatch({ type: "LOAD_AREAS" });
-        // dispatch({ type: "LOAD_CATEGORIES" });
-        // dispatch({ type: "LOAD_AREAS" });
       });
   };
 };
@@ -112,7 +100,7 @@ export const sortByName = (sortBy) => {
     } else if (sortBy === "sortDESC") {
       dispatch({ type: "SORT_BY_NAME_DESC" });
     } else if (sortBy === "sortNew") {
-      dispatch({type: "SORT_BY_DATE"});
+      dispatch({ type: "SORT_BY_DATE" });
     } else {
       dispatch({ type: "SORT_BY_NAME" });
     }

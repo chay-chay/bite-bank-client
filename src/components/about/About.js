@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import biteBank from "../../images/biteBank.png";
 import "./about.css";
+
 class About extends Component {
 
   render() {
@@ -11,7 +12,6 @@ class About extends Component {
         </div>
         <div className="about-text">
           <h1 className="about-header">About</h1>
-        
           <p className="about-info">
             Have you ever watched a cooking video on the internet and thought "I
             would love to cook this later?". Bite Bank is a media storage
@@ -21,7 +21,7 @@ class About extends Component {
             searchable by name, category, and ethnicity...Bite Bank is a useful
             tool for any chef!
           </p> 
-          
+  
         </div>
       </div>
     );
@@ -29,3 +29,4 @@ class About extends Component {
 }
 
 export default About;
+
