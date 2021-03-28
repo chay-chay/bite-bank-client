@@ -18,7 +18,7 @@ const EditRecipe = (props) => {
   const [editFields, setEditField] = useState(initialState);
   // console.log(editFields)
   // editFileds = current state keep value of state
-  console.log(props);
+  // console.log(props);
   const [getRecipeById] = props.recipes.filter((item) => {
     //    console.log(typeof(item.id))
     return item.id.toString() === props.route.match.params.id.toString();

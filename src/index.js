@@ -15,6 +15,7 @@ const store = createStore(recipesReducer, composeWithDevTools(applyMiddleware(th
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+    {/* makes the Redux store available to any nested components that have been wrapped in the connect() function. */}
       <App />
     </Provider>
   </React.StrictMode>,

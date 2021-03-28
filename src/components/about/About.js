@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import biteBank from "../../images/biteBank.png";
 import "./about.css";
 class About extends Component {
+  
   render() {
     return (
       <div className="about">
@@ -10,6 +11,7 @@ class About extends Component {
         </div>
         <div className="about-text">
           <h1 className="about-header">About</h1>
+        
           <p className="about-info">
             Have you ever watched a cooking video on the internet and thought "I
             would love to cook this later?". Bite Bank is a media storage
@@ -18,8 +20,8 @@ class About extends Component {
             you would like to flag and return to in the future. Easily
             searchable by name, category, and ethnicity...Bite Bank is a useful
             tool for any chef!
-          </p>
-          <p></p>
+          </p> 
+          
         </div>
       </div>
     );

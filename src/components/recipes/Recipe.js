@@ -34,33 +34,36 @@ class Recipe extends Component {
 
   render() {
     // console.log(this.props.recipe.youtube_url)
+    const {name, category, area, image_url, youtube_url, id}  = this.props.recipe //destructuring
+    
     return (
       <div className="recipe card">
-        <h2> {this.props.recipe.name}</h2>
+        <h2> {name}</h2>
         <div className="meal-info">
           <div className="meal-info-left">
-            <h4>Category: {this.props.recipe.category}</h4>
-            <h4>Ethnicity: {this.props.recipe.area}</h4>
+            <h4>Category: {category}</h4>
+            <h4>Ethnicity: {area}</h4>
           </div>
 
           <div className="meal-info-right">
             <img
-              src={this.props.recipe.image_url}
+              src={image_url}
               alt="food"
               className="recipe-image"
             />
           </div>
         </div>
 
-        {/* <div style={{ width: "auto", height: "20rem" }}>
+        <div style={{ width: "auto", height: "20rem" }}>
           <ReactPlayer
-            url={this.props.recipe.youtube_url}
+            url={youtube_url}
             width="100%"
             height="100%"
             origin={window.location.origin}
           />
-        </div> */}
-        <Link to={`/recipes/${this.props.recipe.id}/edit`}>
+        </div>
+
+        <Link to={`/recipes/${id}/edit`}>
           <button className="button">Edit</button>
         </Link>
         <button className="button" onClick={this.handleClick}>
