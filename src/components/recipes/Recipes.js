@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Recipe from "./Recipe";
-// import React from "react"
+
 
 class Recipes extends Component {
   // console.log(props)

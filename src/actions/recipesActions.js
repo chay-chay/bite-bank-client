@@ -56,6 +56,7 @@ export const createRecipes = (recipe) => {
       .then((resp) => resp.json())
       .then((data) => {
         dispatch(addRecipe(data));
+        
       })
       .catch((error) => console.log(error));
   };
@@ -96,6 +97,8 @@ export const updateRecipe = (recipeId, changeRecipe) => {
       .then((data) => {
         // console.log(data);
         dispatch(updatingRecipe(data));
+        dispatch({ type: "LOAD_CATEGORIES" });
+        dispatch({ type: "LOAD_AREAS" });
         // dispatch({ type: "LOAD_CATEGORIES" });
         // dispatch({ type: "LOAD_AREAS" });
       });

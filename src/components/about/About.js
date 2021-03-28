@@ -22,7 +22,6 @@ class About extends Component {
             tool for any chef!
           </p> 
           
-
         </div>
       </div>
     );
