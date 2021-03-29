@@ -54,6 +54,5 @@ class RecipeForm extends Component {
   }
 }
 
-
 export default RecipeForm
 

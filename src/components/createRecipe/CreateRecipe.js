@@ -44,7 +44,6 @@ class CreateRecipe extends Component {
   }
 }
 
-// export default CreateRecipe
 
 const mapDispatchToProps = (dispatch) => {
   // console.log(dispatch);

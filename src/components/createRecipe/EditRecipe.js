@@ -59,7 +59,6 @@ const EditRecipe = (props) => {
           handleSubmit={handleSubmit}
         />
       </div>
-      {/* {editFields.name} */}
     </div>
   );
 };

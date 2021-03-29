@@ -74,7 +74,6 @@ export const removeRecipe = (recipeId) => {
 // UPDATE
 export const updateRecipe = (recipeId, changeRecipe) => {
   return (dispatch) => {
-    // console.log('c')
     fetch(url + "/" + recipeId, {
       method: "PATCH",
       headers: {

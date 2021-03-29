@@ -17,6 +17,7 @@ const recipesReducer = (
         ...state,
         recipes: [...state.recipes, action.payload],
         categories: [...state.categories, action.payload.category],
+        areas: [...state.areas, action.payload.area]
       };
 
     case "DELETE_RECIPE":
@@ -26,8 +27,7 @@ const recipesReducer = (
       return { ...state, recipe: filteredRecipe };
 
     case "UPDATE_MEAL":
-      console.log(state);
-      // const filterUpdate = state.recipes.filter(recipe => recipe.id === action.payload.id)
+      // console.log(state);
       const filterUpdate = state.recipes.map((recipe) => {
         if (recipe.id === action.payload.id) {
           return action.payload;
@@ -45,15 +45,9 @@ const recipesReducer = (
       // console.log(filterUpdate)
       return { ...state, recipes: filterUpdate };
 
-    // Option 2
-    // const recipeIndex = state.recipes.findIndex(recipe => {
-    //     return recipe.id === action.payload.id
-    // })
-    //     return {...state, recipes: [...state, ]}
 
     case "LOAD_CATEGORIES":
       let categories = [];
-
       const onlyUnique = (value, index, self) => {
         return self.indexOf(value) === index;
       };
