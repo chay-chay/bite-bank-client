@@ -1,5 +1,6 @@
 {
-  "name": "recipes-frontend",
+  "name": "bite-bank-client",
+  "homepage": "https://chay-chay.github.io/bite-bank-client/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,6 +15,7 @@
     "@testing-library/user-event": "^12.1.10",
     "bootstrap": "^4.6.0",
     "coverflow-react": "^0.1.28",
+    "gh-pages": "^3.1.0",
     "materialize-css": "^1.0.0",
     "mdbreact": "^5.0.1",
     "node-sass": "^5.0.0",
@@ -41,7 +43,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

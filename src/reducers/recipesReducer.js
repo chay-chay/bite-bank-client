@@ -11,7 +11,7 @@ const recipesReducer = (
       // console.log(action);
       // console.log("E")
       return { ...state, loading: false, recipes: action.payload };
-
+// immutable
     case "ADDED_RECIPE":
       return {
         ...state,
@@ -26,7 +26,7 @@ const recipesReducer = (
       );
       return { ...state, recipe: filteredRecipe };
 
-    case "UPDATE_MEAL":
+    case "UPDATE_RECIPE":
       // console.log(state);
       const filterUpdate = state.recipes.map((recipe) => {
         if (recipe.id === action.payload.id) {

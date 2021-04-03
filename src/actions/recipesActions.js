@@ -6,7 +6,7 @@ const url = "http://localhost:3000/recipes";
 export const loadRecipes = (recipes) => ({ type: "LOAD_RECIPES", payload: recipes });
 export const addRecipe = (recipe) => ({ type: "ADDED_RECIPE", payload: recipe });
 export const deleteRecipe = (recipeId) => ({ type: "DELETE_RECIPE", payload: recipeId });
-export const updatingRecipe = (updatedRecipe) => ({ type: "UPDATE_MEAL", payload: updatedRecipe });
+export const updatingRecipe = (updatedRecipe) => ({ type: "UPDATE_RECIPE", payload: updatedRecipe });
 
 // thunk gives us the ability to return FUNCTIONS with a default argument of dispatch
 // asyn action works with thunk res for fetching recipes

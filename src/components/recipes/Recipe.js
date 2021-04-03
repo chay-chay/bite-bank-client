@@ -9,7 +9,6 @@ import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 class Recipe extends Component {
   // console.log(props)
-
   handleClick = (event) => {
     // console.log(this.props.recipe.id)
     confirmAlert({
@@ -54,21 +53,22 @@ class Recipe extends Component {
           </div>
         </div>
 
-        <div style={{ width: "auto", height: "20rem" }}>
+          <div style={{ width: "auto", height: "20rem" }}>
           <ReactPlayer
             url={youtube_url}
             width="100%"
             height="100%"
             origin={window.location.origin}
           />
-        </div>
-
+        </div> 
+ 
         <Link to={`/recipes/${id}/edit`}>
           <button className="button">Edit</button>
         </Link>
         <button className="button" onClick={this.handleClick}>
           Delete
         </button>
+
       </div>
     );
   }

@@ -21,7 +21,7 @@ class About extends Component {
             searchable by name, category, and ethnicity...Bite Bank is a useful
             tool for any chef!
           </p> 
-  
+         
         </div>
       </div>
     );
