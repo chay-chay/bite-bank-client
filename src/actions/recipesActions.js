@@ -1,7 +1,7 @@
 // regular action res for asyn action
 
 // const url = "http://localhost:3000/recipes";
-const url = "https://glacial-plateau-14883.herokuapp.com"
+const url = "https://glacial-plateau-14883.herokuapp.com/"
 
 // we have to pass an argument
 export const loadRecipes = (recipes) => ({ type: "LOAD_RECIPES", payload: recipes });
@@ -44,7 +44,9 @@ export const createRecipes = (recipe) => {
       },
       body: JSON.stringify(recipe),
     };
-    fetch(url, configObj)
+    
+    fetch(url + "/recipes", configObj)
+    
       .then((resp) => resp.json())
       .then((data) => {
         dispatch(addRecipe(data));
