@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/bite-bank-client/static/css/main.c639e410.chunk.css",
-    "main.js": "/bite-bank-client/static/js/main.6d906de3.chunk.js",
-    "main.js.map": "/bite-bank-client/static/js/main.6d906de3.chunk.js.map",
+    "main.js": "/bite-bank-client/static/js/main.f9f99ab3.chunk.js",
+    "main.js.map": "/bite-bank-client/static/js/main.f9f99ab3.chunk.js.map",
     "runtime-main.js": "/bite-bank-client/static/js/runtime-main.247dd191.js",
     "runtime-main.js.map": "/bite-bank-client/static/js/runtime-main.247dd191.js.map",
     "static/css/2.863ccf7e.chunk.css": "/bite-bank-client/static/css/2.863ccf7e.chunk.css",
@@ -27,6 +27,6 @@
     "static/css/2.863ccf7e.chunk.css",
     "static/js/2.49e64a9c.chunk.js",
     "static/css/main.c639e410.chunk.css",
-    "static/js/main.6d906de3.chunk.js"
+    "static/js/main.f9f99ab3.chunk.js"
   ]
 }
