@@ -1,6 +1,5 @@
 {
   "name": "bite-bank-client",
-  "homepage": "https://chay-chay.github.io/bite-bank-client/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
