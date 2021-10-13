@@ -11,7 +11,7 @@ This is my final project of school and use React & Redux. Bite Bank is a media s
 
 ## Get started!
 
-Click on the link to run the live web application here [Bite-Bank](bite-bank.netlify.app/).
+Click on the link to run the live web application here [Bite-Bank](https://bite-bank.netlify.app/).
 
 ## My blog & Walkthrough video
 
